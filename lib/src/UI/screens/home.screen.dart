@@ -1,5 +1,6 @@
 import 'package:demo_kss/src/UI/states/todo_future_provider.dart';
 import 'package:demo_kss/src/UI/widgets/todocard.widget.dart';
+import 'package:demo_kss/src/UI/widgets/todocard_shimmer.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -20,9 +21,7 @@ class HomeScreen extends ConsumerWidget {
         ),
       ),
       body: state.when(
-          loading: () => const Center(
-                child: CircularProgressIndicator(),
-              ),
+          loading: () => const TodoCardShimmer(),
           error: (_, __) => Center(
                 child: Text(
                   'Something went wrong!!!',
